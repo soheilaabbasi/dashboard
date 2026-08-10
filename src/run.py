@@ -34,27 +34,27 @@ else:
             pass
 
 
-
+# Banner
 banner = Image.open('./data/banner8.png')
 st.image(banner)
 
 st.title(":zap: Dashboard")
 st.text("Welcome to the dashboard!")
 
-
+# Metrics
 col1, col2= st.columns(2)
-col1.metric(label="Website Members", value=4000, delta=12)
-col2.metric(label="Telegram Members", value=4000, delta=12)
+col1.metric(label="Website Members", value=4800, delta=12)
+col2.metric(label="Telegram Members", value=2102, delta=12)
 
 
-
+# Statistics
 with st.expander("Statistics"):
     # st.pyplot(sns.histplot(np.random.randn(100)))
     fig, ax = plt.subplots()
     sns.histplot(np.random.randn(100), ax=ax)
     st.pyplot(fig)
 
-
+# User Info
 with st.expander("User Profile"):
     col1, col2 = st.columns(2)
     col1.text_input("Name:")
