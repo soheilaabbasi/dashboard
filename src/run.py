@@ -43,8 +43,8 @@ st.text("Welcome to the dashboard!")
 
 
 col1, col2= st.columns(2)
-col1.st.metric(label="Website Members", value=4000, delta=12)
-col2.st.metric(label="Telegram Members", value=4000, delta=12)
+col1.metric(label="Website Members", value=4000, delta=12)
+col2.metric(label="Telegram Members", value=4000, delta=12)
 
 
 
