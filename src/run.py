@@ -35,6 +35,7 @@ else:
 
 
 # Banner
+
 banner = Image.open('./data/banner8.png')
 st.image(banner)
 
@@ -48,6 +49,13 @@ col2.metric(label="Telegram Members", value=2102, delta=12)
 
 
 # Statistics
+
+col1, col2= st.columns(2)
+col1.metric(label="Website Members", value=4000, delta=12)
+col2.metric(label="Telegram Members", value=4000, delta=12)
+
+
+
 with st.expander("Statistics"):
     # st.pyplot(sns.histplot(np.random.randn(100)))
     fig, ax = plt.subplots()
@@ -55,6 +63,7 @@ with st.expander("Statistics"):
     st.pyplot(fig)
 
 # User Info
+
 with st.expander("User Profile"):
     col1, col2 = st.columns(2)
     col1.text_input("Name:")
