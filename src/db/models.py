@@ -12,17 +12,16 @@ MESSAGE_MATCH_ACTIONS = (
 class User(models.Model):
     id = models.IntegerField(primary_key=True)
     username = models.CharField(max_length=50, null=True)
-    first_name = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50, blank=True, null=True)
     language_code = models.CharField(max_length=10, blank=True, null=True)
-    is_bot = models.BooleanField(default=False)
+    is_bot = models.BooleanField(default=False, blank=True, null=True)
 
 class Message(models.Model):
     message_id = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    chat_id = models.IntegerField()
+    chat_id = models.IntegerField(null=True)
     text = models.TextField()
-    content_type = models.CharField(max_length=50)
     date = models.DateTimeField()
 
 class BannedWord(models.Model):
